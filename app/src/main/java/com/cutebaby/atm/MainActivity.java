@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int RC_LOGIN = 100;
     boolean login = false;
 
 
@@ -15,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if (!login){
             Intent intent = new Intent(this,Login.class);
-            startActivityForResult(intent,100);
+            startActivityForResult(intent,RC_LOGIN);
         }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 100){
+        if(requestCode == RC_LOGIN){
             if (resultCode != RESULT_OK) {
                 finish();
             }
