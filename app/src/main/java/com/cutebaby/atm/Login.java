@@ -14,12 +14,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
-    public void findView(){
+    public void login(View view){
         EditText edname = findViewById(R.id.ed_name);
         EditText edpassword = findViewById(R.id.ed_password);
         String username = edname.getText().toString();
         String password = edpassword.getText().toString();
-        if("cutebaby".equals(username)&& password == "love0420" ){
+        if("cutebaby".equals(username)&& "love0420".equals(password) ){
+            setResult(RESULT_OK);
             finish();
         }
 
