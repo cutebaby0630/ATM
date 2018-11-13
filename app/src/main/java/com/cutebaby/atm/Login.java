@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+//        讀取資料
         String name =getSharedPreferences("atm",MODE_PRIVATE)
                 .getString("USERID","");
 //        EditText edname = findViewById(R.id.ed_name);
