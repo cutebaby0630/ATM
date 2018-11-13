@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode != RESULT_OK) {
                 finish();
             }else{
+//                TODO:check name,age,gender
                 Intent nickname = new Intent(this,NicknameActivity.class);
                 startActivity(nickname);
             }

@@ -23,4 +23,9 @@ public class NicknameActivity extends AppCompatActivity {
         Intent age = new Intent(this,AgeActivity.class);
         startActivity(age);
     }
+    public void backname (View view){
+        Intent login = new Intent(this,Login.class);
+        startActivity(login);
+    }
+
 }

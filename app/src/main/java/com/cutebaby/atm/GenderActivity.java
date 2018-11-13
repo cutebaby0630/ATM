@@ -22,6 +22,13 @@ public class GenderActivity extends AppCompatActivity {
                 .putString("AGE",gender)
                 .apply();
         Intent main = new Intent(this,MainActivity.class);
+        setResult(RESULT_OK);
+        
         startActivity(main);
     }
+    public void backgender(View view){
+        Intent age = new Intent(this,AgeActivity.class);
+        startActivity(age);
+    }
+
 }

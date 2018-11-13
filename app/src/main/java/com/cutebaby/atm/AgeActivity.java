@@ -23,4 +23,8 @@ public class AgeActivity extends AppCompatActivity {
         Intent gender = new Intent(this,GenderActivity.class);
         startActivity(gender);
     }
+    public void backage(View view){
+        Intent nickname = new Intent(this,NicknameActivity.class);
+        startActivity(nickname);
+    }
 }
