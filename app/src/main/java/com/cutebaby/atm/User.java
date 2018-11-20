@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class User {
+    private Context context;
     String id;
     String nickname;
     String gender;
     int age;
-    boolean vaild;
+    boolean vaild = false;
     SharedPreferences settings;
-    private Context context;
+
 
     public User (Context context){
         this.context= context;
@@ -69,7 +70,7 @@ public class User {
     }
 
     public boolean isVaild() {
-        vaild = nickname!=null&&gender!=null&&age!=0;
+        vaild =  getNickname() != null && getGender()!= null && getAge()!=0;
         return vaild;
     }
 

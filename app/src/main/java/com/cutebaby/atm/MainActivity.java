@@ -7,9 +7,6 @@ import android.os.Bundle;
 public class MainActivity extends BaseActivity {
     private static final int RC_LOGIN = 100;
     boolean login = false;
-    User user;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +30,9 @@ public class MainActivity extends BaseActivity {
 //                        .getInt("AGE",0);
 //                String gender = getSharedPreferences("userGender",MODE_PRIVATE)
 //                        .getString("GENDER",null);
-                if(user.isVaild()){
-                    Intent nick = new Intent(this,NicknameActivity.class);
-                    startActivity(nick);
+                if(!user.isVaild()){
+                    Intent nickname= new Intent(this,NicknameActivity.class);
+                    startActivity(nickname);
                 }
 
 ////                TODO:check name,age,gender

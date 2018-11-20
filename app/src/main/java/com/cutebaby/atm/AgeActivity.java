@@ -16,10 +16,11 @@ public class AgeActivity extends BaseActivity {
     public void age(View view){
         EditText edage = findViewById(R.id.ed_age);
         int age = Integer.parseInt(edage.getText().toString());
-        getSharedPreferences("userAge",MODE_PRIVATE)
-                .edit()
-                .putInt("AGE",age)
-                .apply();
+//        getSharedPreferences("userAge",MODE_PRIVATE)
+//                .edit()
+//                .putInt("AGE",age)
+//                .apply();
+        user.setAge(age);
         Intent gender = new Intent(this,GenderActivity.class);
         startActivity(gender);
     }

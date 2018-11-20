@@ -16,10 +16,11 @@ public class NicknameActivity extends BaseActivity {
     public void name(View view){
         EditText edname = findViewById(R.id.ed_name);
         String username = edname.getText().toString();
-        getSharedPreferences("userName",MODE_PRIVATE)
-                .edit()
-                .putString("NICKNAME",username)
-                .apply();
+//        getSharedPreferences("userName",MODE_PRIVATE)
+//                .edit()
+//                .putString("NICKNAME",username)
+//                .apply();
+        user.setNickname(username);
         Intent age = new Intent(this,AgeActivity.class);
         startActivity(age);
     }
