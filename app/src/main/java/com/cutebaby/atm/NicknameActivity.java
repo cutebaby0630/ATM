@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class NicknameActivity extends AppCompatActivity {
+public class NicknameActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

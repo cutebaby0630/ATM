@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class GenderActivity extends AppCompatActivity {
+public class GenderActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

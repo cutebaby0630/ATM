@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class AgeActivity extends AppCompatActivity {
+public class AgeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
