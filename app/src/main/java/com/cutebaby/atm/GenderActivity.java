@@ -19,11 +19,11 @@ public class GenderActivity extends AppCompatActivity {
         String gender = edgender.getText().toString();
         getSharedPreferences("userGender",MODE_PRIVATE)
                 .edit()
-                .putString("AGE",gender)
+                .putString("GENDER",gender)
                 .apply();
         Intent main = new Intent(this,MainActivity.class);
         setResult(RESULT_OK);
-        
+        main.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(main);
     }
     public void backgender(View view){

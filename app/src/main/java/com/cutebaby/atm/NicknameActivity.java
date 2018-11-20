@@ -16,9 +16,9 @@ public class NicknameActivity extends AppCompatActivity {
     public void name(View view){
         EditText edname = findViewById(R.id.ed_name);
         String username = edname.getText().toString();
-        getSharedPreferences("username",MODE_PRIVATE)
+        getSharedPreferences("userName",MODE_PRIVATE)
                 .edit()
-                .putString("Nickname",username)
+                .putString("NICKNAME",username)
                 .apply();
         Intent age = new Intent(this,AgeActivity.class);
         startActivity(age);

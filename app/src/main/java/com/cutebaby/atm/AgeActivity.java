@@ -15,10 +15,10 @@ public class AgeActivity extends AppCompatActivity {
     }
     public void age(View view){
         EditText edage = findViewById(R.id.ed_age);
-        String age = edage.getText().toString();
+        int age = Integer.parseInt(edage.getText().toString());
         getSharedPreferences("userAge",MODE_PRIVATE)
                 .edit()
-                .putString("AGE",age)
+                .putInt("AGE",age)
                 .apply();
         Intent gender = new Intent(this,GenderActivity.class);
         startActivity(gender);
