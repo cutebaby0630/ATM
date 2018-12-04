@@ -1,11 +1,13 @@
 package com.cutebaby.atm;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,12 +35,30 @@ public class MainActivity extends BaseActivity {
                 RecyclerView recyclerView = findViewById(R.id.recycler);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+                recyclerView.setAdapter(new MainAdapter());
 
     }
-    class MainAdapter {
+    class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
-                class MainViewHolder extends RecyclerView.ViewHolder{
+        @NonNull
+        @Override
+        public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1,parent,false);
+
+            return new MainViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return fruits.size();
+        }
+
+        class MainViewHolder extends RecyclerView.ViewHolder{
                     TextView nametext;
                     public MainViewHolder(View itemView) {
                         super(itemView);
