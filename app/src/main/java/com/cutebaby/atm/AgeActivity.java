@@ -43,7 +43,7 @@ public class AgeActivity extends BaseActivity {
             holder.agetext.setTextColor(Color.RED);
         }
     }
-
+//
     @Override
     public int getItemCount() {
         return nums.length;
