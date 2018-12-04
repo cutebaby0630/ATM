@@ -3,8 +3,12 @@ package com.cutebaby.atm;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -14,6 +18,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
     private static final int RC_LOGIN = 100;
             boolean login = false;
+    List<String> fruits = Arrays.asList("蘋果","芭樂","香蕉");
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -25,10 +30,24 @@ public class MainActivity extends BaseActivity {
 //        listView
 //                listView();
 //                RecyclerView
+                RecyclerView recyclerView = findViewById(R.id.recycler);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+    }
+    class MainAdapter {
+
+                class MainViewHolder extends RecyclerView.ViewHolder{
+                    TextView nametext;
+                    public MainViewHolder(View itemView) {
+                        super(itemView);
+                        nametext = itemView.findViewById(R.id.recycler);
+                    }
+                }
     }
 
     private void listView() {
-        List<String> fruits = Arrays.asList("蘋果","芭樂","香蕉");
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,fruits);
         ListView listView = findViewById(R.id.list);
