@@ -22,6 +22,7 @@ public class GenderActivity extends BaseActivity {
 //                .putString("GENDER",gender)
 //                .apply();
         user.setGender(gender);
+        data.add(gender);
         Intent main = new Intent(this,MainActivity.class);
         setResult(RESULT_OK);
         main.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

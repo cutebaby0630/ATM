@@ -20,7 +20,6 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
     private static final int RC_LOGIN = 100;
             boolean login = false;
-    List<String> fruits = Arrays.asList("蘋果","芭樂","香蕉");
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -32,47 +31,46 @@ public class MainActivity extends BaseActivity {
 //        listView
 //                listView();
 //                RecyclerView
-                RecyclerView recyclerView = findViewById(R.id.recycler);
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                recyclerView.setAdapter(new MainAdapter());
+         RecyclerView recycler = findViewById(R.id.recycler_main);
+                recycler.setHasFixedSize(true);
+                recycler.setLayoutManager(new LinearLayoutManager(this));
+                recycler.setAdapter(new MainAdapter());
+
+
 
     }
     class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
-        @NonNull
         @Override
-        public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1,parent,false);
-
-            return new MainViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-
+        public void onBindViewHolder(@NonNull final MainActivity.MainAdapter.MainViewHolder holder, final int position) {
+            holder.maintext.setText(data.get(position)+"");
         }
 
         @Override
         public int getItemCount() {
-            return fruits.size();
+            return data.size();
+        }
+
+        @NonNull
+        @Override
+        public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = getLayoutInflater().inflate(R.layout.age_row,parent,false);
+            return new MainViewHolder(view);
         }
 
         class MainViewHolder extends RecyclerView.ViewHolder{
-                    TextView nametext;
-                    public MainViewHolder(View itemView) {
+                    TextView maintext;
+                    public MainViewHolder(View itemView){
                         super(itemView);
-                        nametext = itemView.findViewById(R.id.recycler);
+                        maintext = itemView.findViewById(R.id.row_age);
+
                     }
                 }
     }
 
-    private void listView() {
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,fruits);
-        ListView listView = findViewById(R.id.list);
-        listView.setAdapter(adapter);
-    }
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

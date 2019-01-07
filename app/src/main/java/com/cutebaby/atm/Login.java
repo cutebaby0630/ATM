@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity {
                     .apply();
             finish();
         }else{
-            new AlertDialog.Builder(this).setMessage("登入失敗")
+            new AlertDialog.Builder(this).setMessage("登入失 敗")
                     .setTitle("error")
                     .setPositiveButton("OK",null)
 //                    .setNegativeButton("Clear", new DialogInterface.OnClickListener() {

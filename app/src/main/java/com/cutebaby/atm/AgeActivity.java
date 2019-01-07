@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class AgeActivity extends BaseActivity {
+public class  AgeActivity extends BaseActivity {
 
     int[] nums = {19,20,21,22,23,24,25,26,27,28,29,30};
     private EditText age;
@@ -88,6 +88,7 @@ public class AgeActivity extends BaseActivity {
 //                .apply();
         user.setAge(age);
         Intent gender = new Intent(this,GenderActivity.class);
+        data.add(age+"");
         startActivity(gender);
     }
     public void backage(View view){
