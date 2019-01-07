@@ -87,8 +87,9 @@ public class  AgeActivity extends BaseActivity {
 //                .putInt("AGE",age)
 //                .apply();
         user.setAge(age);
-        Intent gender = new Intent(this,GenderActivity.class);
         data.add(age+"");
+        Log.d("AgeActivity", "data"+data.get(0));
+        Intent gender = new Intent(this,GenderActivity.class);
         startActivity(gender);
     }
     public void backage(View view){

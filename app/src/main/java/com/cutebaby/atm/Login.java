@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
         findView();
         username = edname.getText().toString();
         password = edpassword.getText().toString();
-        if("cutebaby".equals(username)&& "love0420".equals(password) ){
+        if("cutebaby".equals(username)&& "0000".equals(password) ){
             setResult(RESULT_OK);
 //            登入成功後，儲存資料
 //            SharedPreferences setting = getSharedPreferences("atm",MODE_PRIVATE);
