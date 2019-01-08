@@ -87,8 +87,8 @@ public class  AgeActivity extends BaseActivity {
 //                .putInt("AGE",age)
 //                .apply();
         user.setAge(age);
-        data.add(age+"");
-        Log.d("AgeActivity", "data"+data.get(0));
+
+
         Intent gender = new Intent(this,GenderActivity.class);
         startActivity(gender);
     }

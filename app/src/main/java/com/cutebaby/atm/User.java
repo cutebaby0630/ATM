@@ -3,6 +3,8 @@ package com.cutebaby.atm;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.ArrayList;
+
 public class User {
     private Context context;
     String id;
@@ -11,6 +13,16 @@ public class User {
     int age;
     boolean vaild = false;
     SharedPreferences settings;
+    ArrayList<String> data = new ArrayList<>();
+
+    public ArrayList<String> getData() {
+        return data;
+    }
+
+    public void setData(ArrayList<String> data) {
+        this.data = data;
+    }
+
 
 
     public User (Context context){
@@ -34,6 +46,7 @@ public class User {
     }
 
     public void setNickname(String nickname) {
+        data.add(nickname);
         settings.edit()
                 .putString("NICKNAME",nickname)
                 .apply();
@@ -49,6 +62,7 @@ public class User {
     }
 
     public void setGender(String gender) {
+        data.add(gender);
         settings.edit()
                 .putString("GENDER",gender)
                 .apply();
@@ -63,6 +77,7 @@ public class User {
     }
 
     public void setAge(int age) {
+        data.add(age+"");
         settings.edit()
                 .putInt("AGE",age)
                 .apply();

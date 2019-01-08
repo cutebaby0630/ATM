@@ -20,11 +20,12 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
     private static final int RC_LOGIN = 100;
     boolean login = false;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (!login) {
             Intent intent = new Intent(this, Login.class);
             startActivityForResult(intent, RC_LOGIN);
@@ -50,12 +51,12 @@ public class MainActivity extends BaseActivity {
         }
         @Override
         public void onBindViewHolder(@NonNull final MainViewHolder holder, int position) {
-            holder.maintext.setText(data.get(0 ));
+            holder.maintext.setText(user.data.get(position));
         }
 
         @Override
         public int getItemCount() {
-            return data.size();
+            return user.data.size();
         }
 
 

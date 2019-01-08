@@ -8,16 +8,6 @@ import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity {
     User user;
-   ArrayList<String> data = new ArrayList<>();
-
-    public ArrayList<String> getData() {
-        return data;
-    }
-
-    public void setData(ArrayList<String> data) {
-        this.data = data;
-
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
